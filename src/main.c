@@ -28,6 +28,7 @@ void sort_menu();
 int main()
 {
     int menu;
+    unsigned int sort;
 
     do
     {
@@ -104,13 +105,13 @@ void show_menu()
 
 void sort_menu()
 {
-    printf("请选择排序方式\n");
-    printf("1.按语文成绩升序排列\n");
-    printf("2.按语文成绩降序排列\n");
-    printf("3.按数学成绩升序排列\n");
-    printf("4.按数学成绩降序排列\n");
-    printf("5.按英语成绩升序排列\n");
-    printf("6.按英语成绩降序排列\n");
-    printf("7.按总成绩升序排列\n");
-    printf("8.按总成绩降序排列\n");
+    printf("Please Select Sort Type\n");
+    printf("1.Sort By Chinese Score ASC\n");
+    printf("2.Sort By Chinese Score DESC\n");
+    printf("3.Sort By Math Score ASC\n");
+    printf("4.Sort By Math Score DESC\n");
+    printf("5.Sort By English Score ASC\n");
+    printf("6.Sort By English Score DESC\n");
+    printf("7.Sort By Total Score ASC\n");
+    printf("8.Sort By Total Score DESC\n");
 }
