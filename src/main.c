@@ -1,5 +1,11 @@
 #include <stdio.h>
 
+#include "student.h"
+
+#define _CRT_SECURE_NO_WARNINGS
+
+Student input_student();
+
 typedef enum
 {
     INPUT = 1,
@@ -24,11 +30,13 @@ typedef enum
 
 void show_menu();
 void sort_menu();
+Student input_student();
 
 int main()
 {
     int menu;
     unsigned int sort;
+    Student s;
 
     do
     {
@@ -41,7 +49,7 @@ int main()
         switch ((Menu)menu)
         {
         case INPUT:
-            printf("Select INPUT Command\n");
+            s = input_student();
             break;
         case DISPLAY:
             printf("Select DISPLAY Command\n");
@@ -114,4 +122,20 @@ void sort_menu()
     printf("6.Sort By English Score DESC\n");
     printf("7.Sort By Total Score ASC\n");
     printf("8.Sort By Total Score DESC\n");
+}
+
+Student input_student()
+{
+    Student s;
+    printf("Input Student Code: ");
+    scanf("%s", &s.code);
+    printf("Input Student Name: ");
+    scanf("%s", &s.name);
+    printf("Input Student Chinese Score: ");
+    scanf("%d", &s.chinese);
+    printf("Input Student Math Score: ");
+    scanf("%d", &s.math);
+    printf("Input Student English Score: ");
+    scanf("%d", &s.english);
+    return s;
 }
