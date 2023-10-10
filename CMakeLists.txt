@@ -4,6 +4,7 @@ project(university_student)
 
 add_executable(students
     src/main.c
+    src/student.c
 )
 
 target_include_directories(students
