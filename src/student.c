@@ -58,14 +58,14 @@ bool mod_student(StudentsRepo *repo, char *code)
 	Student *p = &repo->students[idx];
 	Student s;
 
-	printf("��ѧ��ԭ���ĳɼ���:\n����:%d\n��ѧ:%d\nӢ��:%d\n", p->chinese, p->math, p->english);
-	printf("�����ĳɼ��ĳ�(����������ԭ���ĳɼ�):\t");
+	printf("该学生原来的成绩是:\n语文:%d\n数学:%d\n英语:%d\n", p->chinese, p->math, p->english);
+	printf("将语文成绩改成(不改请输入原来的成绩):\t");
 	scanf("%d", &s.chinese);
 	p->chinese = s.chinese;
-	printf("����ѧ�ɼ��ĳ�(����������ԭ���ĳɼ�):\t");
+	printf("将数学成绩改成(不改请输入原来的成绩):\t");
 	scanf("%d", &s.math);
 	p->math = s.math;
-	printf("��Ӣ��ɼ��ĳ�(����������ԭ���ĳɼ�):\t");
+	printf("将英语成绩改成(不改请输入原来的成绩):\t");
 	scanf("%d", &s.english);
 	p->english = s.english;
 	return true;

@@ -46,27 +46,27 @@ int main()
 			plen = &students.len;
 			if (plen == 0)
 			{
-				printf("Ŀǰû��ѧ������");
+				printf("目前没有学生数据\n");
 			}
 
 			break;
 		case MOD:
-			printf("������Ҫ�޸ĵ�ѧ����ѧ��: ");
+			printf("请输入要删除的学生的学号: ");
 			scanf("%s", code);
 			ret = mod_student(&students, code);
 			if (!ret)
 			{
-				printf("û���ҵ���ѧ��\n");
+				printf("没有找到该学号\n");
 			}
 			break;
 		case DELETE:
-			printf("������Ҫɾ����ѧ����ѧ��: ");
+			printf("请输入要删除的学生的学号: ");
 			scanf("%s", code);
 			ret = delete_student(&students, code);
 			// if (ret == false)
 			if (!ret)
 			{
-				printf("û���ҵ���ѧ��\n");
+				printf("没有找到该学号\n");
 			}
 			break;
 		case SORT:
@@ -80,42 +80,42 @@ int main()
 			{
 			case CHINUP:
 				sort_students(&students, cmp_chinese_up);
-				printf("���������\n");
+				printf("已完成排序\n");
 				printf("+---------------------------------+\n");
 				break;
 			case CHINDOWN:
 				sort_students(&students, cmp_chinese_down);
-				printf("���������\n");
+				printf("已完成排序\n");
 				printf("+---------------------------------+\n");
 				break;
 			case MATHUP:
 				sort_students(&students, cmp_math_up);
-				printf("���������\n");
+				printf("已完成排序\n");
 				printf("+---------------------------------+\n");
 				break;
 			case MATHDOWN:
 				sort_students(&students, cmp_math_down);
-				printf("���������\n");
+				printf("已完成排序\n");
 				printf("+---------------------------------+\n");
 				break;
 			case ENGUP:
 				sort_students(&students, cmp_english_up);
-				printf("���������\n");
+				printf("已完成排序\n");
 				printf("+---------------------------------+\n");
 				break;
 			case ENGDOWN:
 				sort_students(&students, cmp_english_down);
-				printf("���������\n");
+				printf("已完成排序\n");
 				printf("+---------------------------------+\n");
 				break;
 			case SUMUP:
 				sort_students(&students, cmp_sum_up);
-				printf("���������\n");
+				printf("已完成排序\n");
 				printf("+---------------------------------+\n");
 				break;
 			case SUMDOWN:
 				sort_students(&students, cmp_sum_down);
-				printf("���������\n");
+				printf("已完成排序\n");
 				printf("+---------------------------------+\n");
 				break;
 			}
@@ -126,40 +126,40 @@ int main()
 
 void sort_menu()
 {
-	printf("��ѡ������ʽ\n");
-	printf("1.�����ĳɼ���������\n");
-	printf("2.�����ĳɼ���������\n");
-	printf("3.����ѧ�ɼ���������\n");
-	printf("4.����ѧ�ɼ���������\n");
-	printf("5.��Ӣ��ɼ���������\n");
-	printf("6.��Ӣ��ɼ���������\n");
-	printf("7.���ܳɼ���������\n");
-	printf("8.���ܳɼ���������\n");
+	printf("请选择排序方式\n");
+	printf("1.按语文成绩升序排列\n");
+	printf("2.按语文成绩降序排列\n");
+	printf("3.按数学成绩升序排列\n");
+	printf("4.按数学成绩降序排列\n");
+	printf("5.按英语成绩升序排列\n");
+	printf("6.按英语成绩降序排列\n");
+	printf("7.按总成绩升序排列\n");
+	printf("8.按总成绩降序排列\n");
 }
 
 void show_menu()
 {
-	printf("1.����ѧ����Ϣ\n");
-	printf("2.��ʾѧ����Ϣ\n");
-	printf("3.�޸�ѧ���ɼ�\n");
-	printf("4.ɾ��ѧ����Ϣ\n");
-	printf("5.����ѧ����Ϣ\n");
-	printf("6.�˳�\n");
-	printf("������һ������>");
+	printf("1.输入学生信息\n");
+	printf("2.显示学生信息\n");
+	printf("3.修改学生成绩\n");
+	printf("4.删除学生信息\n");
+	printf("5.排序学生信息\n");
+	printf("6.退出\n");
+	printf("请输入一个数字>");
 }
 
 Student input_student()
 {
 	Student s;
-	printf("������ѧ��ѧ��: ");
+	printf("请输入学生学号: ");
 	scanf("%s", &s.code);
-	printf("������ѧ������: ");
+	printf("请输入学生姓名: ");
 	scanf("%s", &s.name);
-	printf("������ѧ�����ĳɼ�: ");
+	printf("请输入学生语文成绩: ");
 	scanf("%d", &s.chinese);
-	printf("������ѧ����ѧ�ɼ�: ");
+	printf("请输入学生数学成绩: ");
 	scanf("%d", &s.math);
-	printf("������ѧ��Ӣ��ɼ�: ");
+	printf("请输入学生英语成绩: ");
 	scanf("%d", &s.english);
 	return s;
 }
@@ -167,6 +167,6 @@ Student input_student()
 void show_student(Student *p, int idx)
 {
 	printf("+---------------------------------+\n");
-	printf("��    ��:\t%d\nѧ    ��:\t%s\n��    ��:\t%s\n���ĳɼ�:\t%d\n��ѧ�ɼ�:\t%d\nӢ��ɼ�:\t%d\n", (idx + 1), p->code, p->name, p->chinese, p->math, p->english);
+	printf("序    号:\t%d\n学    号:\t%s\n姓    名:\t%s\n语文成绩:\t%d\n数学成绩:\t%d\n英语成绩:\t%d\n", (idx + 1), p->code, p->name, p->chinese, p->math, p->english);
 	printf("+---------------------------------+\n");
 }
